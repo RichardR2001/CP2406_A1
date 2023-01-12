@@ -42,7 +42,9 @@ public class RainfallAnalyserBeta {
                     csvTempFile.calcDailyMax(rainfall, month);
                 }
             }
-        } catch (FileNotFoundException e) {
+        }
+        // list down possible errors and the print the error
+        catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
         catch (NumberFormatException e) {
@@ -52,7 +54,7 @@ public class RainfallAnalyserBeta {
             System.out.println("Unknown Error.");
         }
     }
-
+    // Print and write to file.
     private static void CSVPrintData(CompileData csvTempFile, String[] month) {
         System.out.println("Welcome to RainfallAnalyser Alpha-Release.");
         System.out.println("Compiling data from CSV file...");

@@ -13,8 +13,8 @@ public class RainfallAnalyserAlpha {
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
         try {
-            // Read the file AnyOtherError.csv for trial run
-            Reader in = new FileReader("Rainfall Analyser Alpha/src/AnyOtherError.csv");
+            // Read the file DataCopperlodeDam.csv for trial run
+            Reader in = new FileReader("Rainfall Analyser Alpha/src/DataCopperlodeDam.csv");
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(in);
             for (CSVRecord record : records) {
                 String month = record.get("Month");

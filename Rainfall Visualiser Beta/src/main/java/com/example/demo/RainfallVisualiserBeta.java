@@ -73,6 +73,7 @@ public class RainfallVisualiserBeta extends Application {
     }
 
     private void setupBarChart() {
+        // Define name for horizontal (x) and vertical (y) axis
         CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Month");
         NumberAxis yAxis = new NumberAxis();

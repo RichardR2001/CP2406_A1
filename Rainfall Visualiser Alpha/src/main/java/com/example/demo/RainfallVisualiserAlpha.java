@@ -21,24 +21,24 @@ public class RainfallVisualiserAlpha extends Application {
         // Setup barchart.
         setupBarChart();
         // Load data from file.
-        var path = "/Users/richardreynard/IdeaProjects/CP2406_A1_14170539_RichardReynard/data.txt";
+        var path = "/Users/richardreynard/IdeaProjects/CP2406_A1_14170539_RichardReynard/DataCopperlodeDam.txt";
         TextIO.readFile(path);
         String[] rainfallData;
         String[] header = TextIO.getln().split(",");
         ArrayList<String> monthlyTotal = new ArrayList<>();
         ArrayList<String> monthlyMin = new ArrayList<>();
         ArrayList<String> monthlyMax = new ArrayList<>();
-        // Data series 1.
+        // Data series 1 (from DataCopperlodeDam.txt) .
         XYChart.Series dataSeries1 = new XYChart.Series();
         dataSeries1.setName("Total Rainfall");
         for (int i = 0; i < 12; i++) {
             rainfallData = TextIO.getln().split(",");
             String total = rainfallData[1];
-            monthlyTotal.add(total);
+            monthlyTotal.add(total);    // add bar for total
             String min = rainfallData[2];
-            monthlyMin.add(min);
+            monthlyMin.add(min);        // add bar for min
             String max = rainfallData[3];
-            monthlyMax.add(max);
+            monthlyMax.add(max);        // add bar for max
             dataSeries1.getData().add(new XYChart.Data(monthName[i], Double.parseDouble(total)));;
         }
         barChart.getData().add(dataSeries1);
@@ -67,6 +67,7 @@ public class RainfallVisualiserAlpha extends Application {
     }
 
     private void setupBarChart() {
+        // Define name for horizontal (x) and vertical (y) axis
         CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Month");
         NumberAxis yAxis = new NumberAxis();
