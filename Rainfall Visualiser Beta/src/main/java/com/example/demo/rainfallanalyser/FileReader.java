@@ -5,7 +5,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.*;
 import java.util.Objects;
 
-public class RainfallReader {
+public class FileReader {
     public static void main(String[] args) throws IOException {
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         // File 1.
@@ -28,7 +28,7 @@ public class RainfallReader {
 
     public static void CSVReadData(RainfallProccessData csvTempFile, String fileName) {
         try {
-            Reader in = new FileReader(fileName);
+            Reader in = new java.io.FileReader(fileName);
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(in);
             // Read data.
             for (CSVRecord record : records) {
@@ -55,8 +55,8 @@ public class RainfallReader {
 
     private static void CSVPrintData(RainfallProccessData csvTempFile, String[] month) {
         System.out.println("Welcome to RainfallAnalyser Beta-Release.");
-        System.out.println("Analysing Data...");
-        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println("Compiling data from CSV file...");
+        System.out.println("*****************************************************************************************");
         for (int i = 0; i < 12; i++) {
             double monthlyTotal = csvTempFile.getMonthlyTotal(i);
             double dailyMin = csvTempFile.getDailyMin(i);
@@ -66,7 +66,7 @@ public class RainfallReader {
             System.out.printf(", Max rainfall = " + "%.2f", dailyMax);
             System.out.println();
         }
-        System.out.println("-------------------------------------------------------------------------------");
-        System.out.println("Analysing Complete.");
+        System.out.println("*****************************************************************************************");
+        System.out.println("Congratulations, compiling has been completed!");
     }
 }
