@@ -1,7 +1,7 @@
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVRecord;
 import java.io.*;
 import java.util.Objects;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVRecord;
 
 // Set class RainfallAnalyserAlpha as public so that other classes can also access the field and method
 public class RainfallAnalyserAlpha {
@@ -43,18 +43,18 @@ public class RainfallAnalyserAlpha {
         // Print and write to file.
         FileWriter myWriter = new FileWriter("data.txt");
         System.out.println("Welcome to RainfallAnalyser Alpha-Release.");
-        System.out.println("Analysing Data...");
-        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println("Compiling data from CSV file...");
+        System.out.println("*****************************************************************************************");
         myWriter.write("month,total,min,max\n");
         for (int i = 0; i < 12; i++) {
             System.out.printf(monthName[i] + ": Total rainfall = " + "%.2f", monthlyTotal[i]);
-            System.out.printf(", Min rainfall = " + "%.2f", dailyMin[i]);
-            System.out.printf(", Max rainfall = " + "%.2f", dailyMax[i]);
+            System.out.printf(", Minimum rainfall = " + "%.2f", dailyMin[i]);
+            System.out.printf(", Maximum rainfall = " + "%.2f", dailyMax[i]);
             System.out.println();
             myWriter.write(monthName[i] + "," + String.format("%.2f", monthlyTotal[i]) + "," + String.format("%.2f", dailyMin[i]) + "," + String.format("%.2f", dailyMax[i]) + "\n");
         }
-        System.out.println("-------------------------------------------------------------------------------");
-        System.out.println("Analysing Complete.");
+        System.out.println("*****************************************************************************************");
+        System.out.println("Congratulations, compiling has been completed!");
         myWriter.close();
     }
 }

@@ -8,25 +8,25 @@ import java.util.Objects;
 public class RainfallAnalyserBeta {
     public static void main(String[] args) throws IOException {
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        // File 1.
-        RainfallProccessData csvTempFile = new RainfallProccessData();
+        // File DataCopperlodeDam.
+        CompileData csvTempFile = new CompileData();
         CSVReadData(csvTempFile, "Rainfall Analyser Beta/src/rainfallanalyser/DataCopperlodeDam.csv");
         CSVPrintData(csvTempFile, monthName);
-        RainfallSaveFile csv = new RainfallSaveFile();
+        SaveDataToFile csv = new SaveDataToFile();
         csv.saveFile(csvTempFile, "data.txt", monthName);
-        // File 2.
-        RainfallProccessData csvTempFile2 = new RainfallProccessData();
+        // File DataKurandaRailway.
+        CompileData csvTempFile2 = new CompileData();
         CSVReadData(csvTempFile2, "Rainfall Analyser Beta/src/rainfallanalyser/DataKurandaRailway.csv");
         CSVPrintData(csvTempFile2, monthName);
         csv.saveFile(csvTempFile2, "data2.txt", monthName);
-        // File 3.
-        RainfallProccessData csvTempFile3 = new RainfallProccessData();
+        // File DataMountSheridanStationCNS.
+        CompileData csvTempFile3 = new CompileData();
         CSVReadData(csvTempFile3, "Rainfall Analyser Beta/src/rainfallanalyser/DataMountSheridanStationCNS.csv");
         CSVPrintData(csvTempFile3, monthName);
         csv.saveFile(csvTempFile3, "data3.txt", monthName);
     }
 
-    private static void CSVReadData(RainfallProccessData csvTempFile, String fileName) {
+    private static void CSVReadData(CompileData csvTempFile, String fileName) {
         try {
             Reader in = new FileReader(fileName);
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(in);
@@ -53,10 +53,10 @@ public class RainfallAnalyserBeta {
         }
     }
 
-    private static void CSVPrintData(RainfallProccessData csvTempFile, String[] month) {
-        System.out.println("Welcome to RainfallAnalyser Beta-Release.");
-        System.out.println("Analysing Data...");
-        System.out.println("-------------------------------------------------------------------------------");
+    private static void CSVPrintData(CompileData csvTempFile, String[] month) {
+        System.out.println("Welcome to RainfallAnalyser Alpha-Release.");
+        System.out.println("Compiling data from CSV file...");
+        System.out.println("*****************************************************************************************");
         for (int i = 0; i < 12; i++) {
             double monthlyTotal = csvTempFile.getMonthlyTotal(i);
             double dailyMin = csvTempFile.getDailyMin(i);
@@ -66,7 +66,7 @@ public class RainfallAnalyserBeta {
             System.out.printf(", Max rainfall = " + "%.2f", dailyMax);
             System.out.println();
         }
-        System.out.println("-------------------------------------------------------------------------------");
-        System.out.println("Analysing Complete.");
+        System.out.println("*****************************************************************************************");
+        System.out.println("Congratulations, compiling has been completed!");
     }
 }
