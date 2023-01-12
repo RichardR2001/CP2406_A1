@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Rainfall Analyser Alpha" />
+        <module name="Rainfall Analyser Beta" />
+        <module name="Rainfall Visualiser Beta" />
+      </profile>
+      <profile name="Annotation profile for CP2406_A1_14170539_RichardReynard" enabled="true">
+        <sourceOutputDir name="../Rainfall Visualiser Beta/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../Rainfall Visualiser Beta/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Rainfall Visualiser Alpha" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
