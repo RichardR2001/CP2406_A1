@@ -1,6 +1,6 @@
 package rainfallanalyser;
 
-public class RainfallProccessData {
+public class CompileData {
     double[] monthlyTotal = new double[12];
     double[] dailyMin = new double[12];
     double[] dailyMax = new double[12];

@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class RainfallSaveFile {
-    public void saveFile(RainfallProccessData csv, String fileName, String[] monthName) throws IOException {
+public class SaveDataToFile {
+    public void saveFile(CompileData csv, String fileName, String[] monthName) throws IOException {
         // Create new file.
         File myObj = new File(fileName);
         System.out.println("Saving File...");
