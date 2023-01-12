@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.rainfallanalyser.RainfallProccessData;
-import com.example.demo.rainfallanalyser.RainfallReader;
+import com.example.demo.rainfallanalyser.FileReader;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -49,7 +49,7 @@ public class RainfallVisualiserBeta extends Application {
     }
 
     private void loadDataFromFile(String filePath) {
-        RainfallReader.CSVReadData(csvTempFile, filePath);
+        FileReader.CSVReadData(csvTempFile, filePath);
         dataSeries1.setName("Total Rainfall");
         for (int i = 0; i < monthName.length; i++) {
             double monthlyTotal = csvTempFile.getMonthlyTotal(i);
