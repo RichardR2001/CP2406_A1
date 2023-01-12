@@ -13,8 +13,8 @@ public class RainfallAnalyserAlpha {
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
         try {
-            // Read the file DataCopperlodeDam.csv for trial run
-            Reader in = new FileReader("Rainfall Analyser Alpha/src/DataCopperlodeDam.csv");
+            // Read the file AnyOtherError.csv for trial run
+            Reader in = new FileReader("Rainfall Analyser Alpha/src/AnyOtherError.csv");
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(in);
             for (CSVRecord record : records) {
                 String month = record.get("Month");
@@ -41,7 +41,7 @@ public class RainfallAnalyserAlpha {
             System.out.println("Unknown Error.");
         }
         // Print and write to file.
-        FileWriter myWriter = new FileWriter("data.txt");
+        FileWriter myWriter = new FileWriter("DataCopperlodeDam.txt");
         System.out.println("Welcome to RainfallAnalyser Alpha-Release.");
         System.out.println("Compiling data from CSV file...");
         System.out.println("*****************************************************************************************");

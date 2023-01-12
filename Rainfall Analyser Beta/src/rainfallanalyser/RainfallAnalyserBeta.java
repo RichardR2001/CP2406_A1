@@ -8,22 +8,22 @@ import java.util.Objects;
 public class RainfallAnalyserBeta {
     public static void main(String[] args) throws IOException {
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        // File DataCopperlodeDam.
+        // File DataCopperlodeDam (to be exported as DataCopperlodeDam.txt).
         CompileData csvTempFile = new CompileData();
         CSVReadData(csvTempFile, "Rainfall Analyser Beta/src/rainfallanalyser/DataCopperlodeDam.csv");
         CSVPrintData(csvTempFile, monthName);
         SaveDataToFile csv = new SaveDataToFile();
-        csv.saveFile(csvTempFile, "data.txt", monthName);
-        // File DataKurandaRailway.
+        csv.saveFile(csvTempFile, "DataCopperlodeDam.txt", monthName);
+        // File DataKurandaRailway (to be exported as DataKurandaRailway.txt).
         CompileData csvTempFile2 = new CompileData();
         CSVReadData(csvTempFile2, "Rainfall Analyser Beta/src/rainfallanalyser/DataKurandaRailway.csv");
         CSVPrintData(csvTempFile2, monthName);
-        csv.saveFile(csvTempFile2, "data2.txt", monthName);
-        // File DataMountSheridanStationCNS.
+        csv.saveFile(csvTempFile2, "DataKurandaRailway.txt", monthName);
+        // File DataMountSheridanStationCNS (to be exported as DataMountSheridanStationCNS.txt).
         CompileData csvTempFile3 = new CompileData();
         CSVReadData(csvTempFile3, "Rainfall Analyser Beta/src/rainfallanalyser/DataMountSheridanStationCNS.csv");
         CSVPrintData(csvTempFile3, monthName);
-        csv.saveFile(csvTempFile3, "data3.txt", monthName);
+        csv.saveFile(csvTempFile3, "DataMountSheridanStationCNS.txt", monthName);
     }
 
     private static void CSVReadData(CompileData csvTempFile, String fileName) {
