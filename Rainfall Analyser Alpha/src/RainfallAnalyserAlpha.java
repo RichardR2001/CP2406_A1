@@ -3,17 +3,19 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.*;
 import java.util.Objects;
 
+// Set class RainfallAnalyserAlpha as public so that other classes can also access the field and method
 public class RainfallAnalyserAlpha {
     public static void main(String[] args) throws IOException {
+        // all variables are set to double as they may contain decimals.
         double[] monthlyTotal = new double[12];
         double[] dailyMin = new double[12];
         double[] dailyMax = new double[12];
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
         try {
+            // Read the file DataCopperlodeDam.csv for trial run
             Reader in = new FileReader("Rainfall Analyser Alpha/src/DataCopperlodeDam.csv");
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(in);
-            // Read data.
             for (CSVRecord record : records) {
                 String month = record.get("Month");
                 String rainfall = record.get("Rainfall amount (millimetres)");
@@ -27,7 +29,9 @@ public class RainfallAnalyserAlpha {
                     if (rainfallNum > dailyMax[monthNum - 1]) dailyMax[monthNum - 1] = rainfallNum;
                 }
             }
-        } catch (FileNotFoundException e) {
+        }
+        // list down possible errors and the print the error
+        catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
         catch (NumberFormatException e) {
